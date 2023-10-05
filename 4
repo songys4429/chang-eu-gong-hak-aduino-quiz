@@ -1,0 +1,23 @@
+char inputChar = ' ';
+import processing.serial.*;
+import processing.net.*;
+Serial p;
+Server s;
+Client c;
+void setup(){
+  p = new Serial(this, "COM5", 9600);
+  s = new Server(this, 12345);
+  size(100, 100);
+}
+void draw() {
+  background(0);
+  fill(255);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  text(inputChar, width / 2, height / 2);
+}
+void keyPressed() {
+  if (key == '1' || key == '2') {
+    inputChar = key; // 입력한 한 글자를 변수에 저장
+  }
+}
